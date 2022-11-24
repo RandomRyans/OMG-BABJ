@@ -1,0 +1,12 @@
+#!/bin/bash
+
+DISTRO=$(uname -o)
+
+if [ $DISTRO == Android ]; then
+	export CR00K-3D_ROOT="/data/data/com.termux/files/usr/opt/4D"
+else
+	export CR00K-3D_ROOT="/usr/opt/4D"
+fi
+
+cd $_ROOT
+bash ./4D

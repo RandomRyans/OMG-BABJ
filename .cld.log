@@ -1,0 +1,35 @@
+{"level":"info","time":"2022-08-14T13:49:36Z","message":"Thank you for trying Cloudflare Tunnel. Doing so, without a Cloudflare account, is a quick way to experiment and try it out. However, be aware that these account-less Tunnels have no uptime guarantee. If you intend to use Tunnels in production you should use a pre-created named tunnel by following: https://developers.cloudflare.com/cloudflare-one/connections/connect-apps"}
+{"level":"info","time":"2022-08-14T13:49:36Z","message":"Requesting new quick Tunnel on trycloudflare.com..."}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"|  Your quick Tunnel has been created! Visit it at (it may take some time to be reachable):  |"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"|  https://adipex-daisy-far-fleet.trycloudflare.com                                          |"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"+--------------------------------------------------------------------------------------------+"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Cannot determine default configuration path. No file [config.yml config.yaml] in [~/.cloudflared ~/.cloudflare-warp ~/cloudflare-warp /etc/cloudflared /usr/local/etc/cloudflared]"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Version 2022.8.0"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"GOOS: linux, GOVersion: go1.18, GoArch: amd64"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Settings: map[logfile:.cld.log protocol:quic url:127.0.0.1:8080]"}
+{"level":"info","autoupdateFreq":86400000,"time":"2022-08-14T13:49:39Z","message":"Autoupdate frequency is set"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Generated Connector ID: 9e4b2759-920d-4163-bca2-f498061db05f"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Initial protocol quic"}
+{"level":"info","time":"2022-08-14T13:49:39Z","message":"Starting metrics server on 127.0.0.1:36865/metrics"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:39Z","message":"Failed to serve quic connection"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:39Z","message":"Register tunnel error from server side"}
+{"level":"info","ip":"198.41.200.193","connIndex":0,"time":"2022-08-14T13:49:39Z","message":"Retrying connection in up to 2s seconds"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:40Z","message":"Failed to serve quic connection"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:40Z","message":"Register tunnel error from server side"}
+{"level":"info","ip":"198.41.200.193","connIndex":0,"time":"2022-08-14T13:49:40Z","message":"Retrying connection in up to 4s seconds"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:41Z","message":"Failed to serve quic connection"}
+{"level":"error","ip":"198.41.200.193","connIndex":0,"error":"Unauthorized: Failed to get tunnel","time":"2022-08-14T13:49:41Z","message":"Register tunnel error from server side"}
+{"level":"info","ip":"198.41.200.193","connIndex":0,"time":"2022-08-14T13:49:41Z","message":"Retrying connection in up to 8s seconds"}
+{"level":"info","connIndex":0,"location":"SEA","ip":"198.41.200.193","time":"2022-08-14T13:49:42Z","message":"Connection 83c19152-8453-4b30-ad04-7dbfe0516c5f registered"}
+{"level":"info","connIndex":1,"location":"LAX","ip":"198.41.192.37","time":"2022-08-14T13:49:43Z","message":"Connection 266cd902-2de7-4cf8-a3d7-2d2975bfe1f2 registered"}
+{"level":"info","connIndex":2,"location":"SEA","ip":"198.41.200.63","time":"2022-08-14T13:49:44Z","message":"Connection 373a993d-6f79-49c2-bb61-c651e5353bb0 registered"}
+{"level":"info","connIndex":3,"location":"LAX","ip":"198.41.192.27","time":"2022-08-14T13:49:45Z","message":"Connection 89252f6f-5ca7-417b-84d1-14181ad70b87 registered"}
+{"level":"info","time":"2022-08-14T13:51:39Z","message":"Initiating graceful shutdown due to signal interrupt ..."}
+{"level":"info","connIndex":3,"time":"2022-08-14T13:51:39Z","message":"Unregistered tunnel connection"}
+{"level":"info","connIndex":1,"time":"2022-08-14T13:51:39Z","message":"Unregistered tunnel connection"}
+{"level":"info","connIndex":0,"time":"2022-08-14T13:51:39Z","message":"Unregistered tunnel connection"}
+{"level":"info","connIndex":2,"time":"2022-08-14T13:51:39Z","message":"Unregistered tunnel connection"}
+{"level":"error","time":"2022-08-14T13:51:39Z","message":"no more connections active and exiting"}
+{"level":"info","time":"2022-08-14T13:51:39Z","message":"Tunnel server stopped"}
+{"level":"info","time":"2022-08-14T13:51:39Z","message":"Metrics server stopped"}
